@@ -1,7 +1,7 @@
 let data = [];
 let current = 0;
+let score = 0;
 
-// load JSON
 fetch("cerdas_cermat_islam.json")
   .then(res => res.json())
   .then(json => {
@@ -26,24 +26,25 @@ function checkAnswer() {
   let penjelasan = data[current].penjelasan || "";
 
   if (user === correct) {
+    score += 10;
     document.getElementById("result").innerHTML =
-      "✅ BENAR!<br><br>" + penjelasan;
+      "✅ Benar!<br>" + penjelasan;
   } else {
     document.getElementById("result").innerHTML =
-      "❌ SALAH! Jawaban: " + data[current].jawaban +
-      "<br><br>" + penjelasan;
+      "❌ Salah! Jawaban: " + data[current].jawaban +
+      "<br>" + penjelasan;
   }
 
+  document.getElementById("score").innerText = score;
   document.getElementById("nextBtn").disabled = false;
 }
 
 function nextQuestion() {
   current++;
-
   if (current >= data.length) {
-    data = shuffle(data);
+    alert("Game selesai! Score kamu: " + score);
     current = 0;
+    score = 0;
   }
-
   loadQuestion();
 }

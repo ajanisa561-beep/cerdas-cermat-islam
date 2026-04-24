@@ -2,20 +2,26 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Cozy Quest Web</title>
+  <title>Cozy Quest CCI</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="card">
-  <h1>🐱 📖 Cozy Quest</h1>
-  <p id="question">Loading...</p>
+<div class="container">
+  <div class="card">
+    <h1>🐱 Cozy Quest</h1>
+    <p class="subtitle">Cerdas Cermat Islam</p>
 
-  <input type="text" id="answer" placeholder="Ketik jawaban..." />
-  <button onclick="checkAnswer()">SUBMIT ✔</button>
+    <div class="score">Score: <span id="score">0</span></div>
 
-  <div id="result"></div>
-  <button id="nextBtn" onclick="nextQuestion()" disabled>NEXT ➔</button>
+    <p id="question">Loading...</p>
+
+    <input type="text" id="answer" placeholder="Ketik jawaban..." />
+    <button onclick="checkAnswer()">SUBMIT</button>
+
+    <div id="result"></div>
+    <button id="nextBtn" onclick="nextQuestion()" disabled>NEXT</button>
+  </div>
 </div>
 
 <script src="script.js"></script>

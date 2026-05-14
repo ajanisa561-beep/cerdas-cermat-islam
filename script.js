@@ -10,7 +10,11 @@ fetch("cerdas_cermat_islam.json")
   });
 
 function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function loadQuestion() {
@@ -44,7 +48,8 @@ function nextQuestion() {
   if (current >= data.length) {
     alert("Game selesai! Score kamu: " + score);
     current = 0;
-    score = 0;
+score = 0;
+data = shuffle(data);
   }
   loadQuestion();
 }

@@ -1,17 +1,32 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #fbcfe8, #c7d2fe);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.question {
+  font-size: clamp(18px, 4vw, 22px);
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .card {
